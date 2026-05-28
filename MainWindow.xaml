@@ -38,7 +38,7 @@
         <TextBox x:Name="txtUserInput" Grid.Column="0" Height="35" Background="DarkSlateBlue" Foreground="White" BorderBrush="Aqua" 
                      VerticalContentAlignment="Center" Padding="5" KeyDown="TxtUserInput_KeyDown" FontSize="13"/>
 
-        <Button x:Name="btnSend" Content="SEND" Grid.Column="1" Width="80" Margin="5,0,0,0" Background="DarkSlateBlue" 
+        <Button x:Name="btnSend" Content="SEND" Grid.Column="1" Width="80" Margin="5,0,0,0" Background="Azure" 
                     Foreground="DarkSlateBlue" FontWeight="Bold" Click="BtnSend_Click"/>
 
     </Grid>

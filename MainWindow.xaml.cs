@@ -1,24 +1,45 @@
-﻿using System.Text;
+﻿using System;
+using System.IO;
+using System.Media;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ChatBotGui
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        
+
+     
+   
+
+        private void ExecuteCommunicationCycle()
         {
-            InitializeComponent();
+            string rawPrompt = txtUserInput.Text.Trim();
+            if (string.IsNullOrEmpty(rawPrompt)) return;
+
+            // Render User Output Dialogue Track[cite: 5]
+            tbChatDisplay.Text += $"You: {rawPrompt}\n";
+            txtUserInput.Clear();
+
+          
+
+   
+        }
+
+        private void BtnSend_Click(object sender, RoutedEventArgs e)
+        {
+            ExecuteCommunicationCycle();
+        }
+
+        private void TxtUserInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                ExecuteCommunicationCycle();
+            }
         }
     }
 }
+
+
